@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block Breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="http://10.12.19.92:5000/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/">mtmct</a></li>
+        <li class="breadcrumb-item active" aria-current="page">run()</li>
+    </ol>
+</nav>
+{% endblock %}
+
+
+<iframe name="hidden" style="display:none;"></iframe>
+
+{% block content %}
+
+{{ render_form(form) }}
+
+<div class="img-container">
+    <p align="center">group 1</p>
+    <img src="{{ url_for('result_feed', node_id=0, res_type=0) }}" class="center"  style="border:1px solid black;width:33%" alt="">
+    <img src="{{ url_for('result_feed', node_id=0, res_type=1) }}" class="center"  style="border:1px solid black;width:33%" alt="">
+</div>
+
+</div>
+
+
+<div class="img-container">
+    <p align="center">group 2</p>
+    <img src="{{ url_for('result_feed', node_id=1, res_type=0) }}" class="center"  style="border:1px solid black;width:33%" alt="">
+    <img src="{{ url_for('result_feed', node_id=1, res_type=1) }}" class="center"  style="border:1px solid black;width:33%" alt="">
+</div>
+
+
+<div class="img-container">
+    <p align="center">group 3</p>
+    <img src="{{ url_for('result_feed', node_id=2, res_type=0) }}" class="center"  style="border:1px solid black;width:33%" alt="">
+    <img src="{{ url_for('result_feed', node_id=2, res_type=1) }}" class="center"  style="border:1px solid black;width:33%" alt="">
+</div>
+
+{% endblock %}
